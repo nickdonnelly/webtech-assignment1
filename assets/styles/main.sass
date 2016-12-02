@@ -45,17 +45,12 @@ html
   background-size: cover
 
 
-body
-  // background: $color-dark-blue
-  display: none
-
 .wrapper
+  opacity: 0
+  transform: translateY(50px)
+  +transition(all, 0.8s, ease-in-out)
   margin: 0 auto
   padding-top: 3em
-
-.centered
-  // background: $color-light-blue
-  +magic-box-shadow
 
 .button
   display: inline-block
