@@ -41,10 +41,12 @@ html
   font-weight: 500
   font-size: 1.15em
   padding-top: 0.35em
+  background: url('../img/trump-welcome.jpg') no-repeat center center fixed
+  background-size: cover
 
 
 body
-  background: $color-dark-blue
+  // background: $color-dark-blue
   display: none
 
 .wrapper
@@ -52,7 +54,7 @@ body
   padding-top: 3em
 
 .centered
-  background: $color-light-blue
+  // background: $color-light-blue
   +magic-box-shadow
 
 .button
@@ -101,6 +103,16 @@ h1
   vertical-align: middle
 
 // MOBILE MODIFIERS FOR STANDARD STYLES
+@media only screen and (min-device-width: 768px)
+  .wrapper
+    max-width: 80%
+
+@media only screen and (min-device-width: 1280px)
+  .wrapper
+    max-width: 60%
+
+
+
 @media only screen and (min-device-width: 0px) and (max-device-width: 500px) and (orientation: portrait)
   .button
     height: 8em
