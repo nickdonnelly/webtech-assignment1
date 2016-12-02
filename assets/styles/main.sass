@@ -4,12 +4,13 @@
 $color-dark-blue: #446CB3
 $color-light-blue: #59ABE3
 $color-red: #CF000F
-$color-red-hover: #d42a2a
+$color-red-hover: #f13939
 $color-turquoise: #36D7B7
 $color-green: #2ECC71
 $color-button-text: #000000
 $color-dark: #555
 $color-dark-hover: #333
+$color-question-background: #5c51e7
 
 
 // MIXIN DEFINITIONS
@@ -34,6 +35,9 @@ $color-dark-hover: #333
   -ms-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75)
   -o-box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75)
   box-shadow: 0px 0px 8px 0px rgba(0,0,0,0.75)
+
+=text-shadow()
+  text-shadow: 2px  2px 4px darken(white, 80%)
 
 
 html
@@ -96,6 +100,12 @@ h1
   font-size: 3.2em
   text-align: center
   vertical-align: middle
+h2
+  font-size: 3.0em
+  text-align: center
+  vertical-align: middle
+  color: white
+  +text-shadow
 
 // MOBILE MODIFIERS FOR STANDARD STYLES
 @media only screen and (min-device-width: 768px)
@@ -113,6 +123,9 @@ h1
     height: 8em
     line-height: 8em
     font-size: 3.0em
+  .choice-button
+    height: 5em
+    line-height: 5em
   h1
     font-size: 4em
 
@@ -121,6 +134,9 @@ h1
     height: 9em
     line-height: 9em
     font-size: 3.5em
+  .choice-button
+    height: 6em
+    line-height: 6em
 
 
 // NONGENERIC STYLES
@@ -131,3 +147,20 @@ h1
 .begin-button
   width: 90%
   margin: 2% 5%
+
+.question-container
+  background: $color-question-background
+  +border-radius(8px)
+  +magic-box-shadow
+  width: 90%
+  margin: 2% 5%
+  padding: 0.7em 0.3em
+  border: 1px solid ligten($color-question-background, 70%)
+
+.choice-button
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
+  margin-left: 0
+  margin-right: 0

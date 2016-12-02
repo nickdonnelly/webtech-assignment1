@@ -10,5 +10,9 @@ $(document).ready(function(){
     $('.begin-button').click(function(){
       // logic goes here, hide this div, show next one
     });
+
+    $('#choice-trump').click(function(){});
+    $('#choice-other').click(function(){});
+    $('#choice-none').click(function(){});
     // Maybe 3 options: trump said it, somebody else said it, nobody said it.
 });
