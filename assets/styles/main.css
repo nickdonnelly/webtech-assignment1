@@ -84,6 +84,7 @@ html {
   margin: 0.15em auto;
   border: 1px inset #36D7B7;
   font-weight: 700;
+  cursor: pointer;
   color: #000000; }
   .button:hover {
     text-decoration: none;
@@ -258,3 +259,31 @@ h2 {
   border-radius: 5px;
   border: 1px solid #446CB3;
   margin: 0 5%; }
+
+.game-over-container {
+  display: none;
+  background: #59ABE3;
+  color: white;
+  -webkit-border-radius: 8px;
+  -o-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  -ms-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  -o-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75); }
+
+#game-over-heading {
+  color: white;
+  text-shadow: 2px 2px 4px #333333; }
+
+#final-score {
+  color: #bfbfbf; }
+
+#scorenum {
+  color: #f13939; }
+
+.mega {
+  font-size: 13em; }

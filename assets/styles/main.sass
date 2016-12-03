@@ -72,6 +72,7 @@ html
   margin: 0.15em auto
   border: 1px inset $color-turquoise
   font-weight: 700
+  cursor: pointer
   color: $color-button-text
 
 
@@ -211,3 +212,23 @@ h2
   +border-radius(5px)
   border: 1px solid $color-dark-blue
   margin: 0 5%
+
+.game-over-container
+  display: none
+  background: $color-light-blue
+  color: white
+  +border-radius(8px)
+  +magic-box-shadow
+
+#game-over-heading
+  color: white
+  +text-shadow
+
+#final-score
+  color: darken(white, 25%)
+
+#scorenum
+  color: $color-red-hover
+
+.mega
+  font-size: 13em

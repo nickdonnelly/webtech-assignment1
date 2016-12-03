@@ -57,7 +57,7 @@ var chosen_answer = '';
 $(document).ready(function(){
     $('.wrapper').css({opacity: '1', transform: 'none'}); // fade it in and move it up a bit
 
-    $('.begin-button').click(function(){
+    $('#start-button').click(function(){
       $('.begin-container').hide('fast');
       rounds_played = 1;
       queueQuestion();
@@ -89,7 +89,6 @@ $(document).ready(function(){
 
     $('#next-question').click(function(){
       if(rounds_played > 10){
-        console.log("END OF GAME");
         showEnd();
       }else{
         queueQuestion();
@@ -98,10 +97,14 @@ $(document).ready(function(){
       }
     });
 
+    $('#play-again').click(function(){
+      location.reload(); // refresh page.
+    });
+
 });
 
 function queueQuestion(){
-  x = Math.floor(Math.random() * 2); // btwn 0 and 2
+  x = Math.floor(Math.random() * 3); // btwn 0 and 2
   if(x == 0){ // trump
     correct_answer = 'trump';
     quote_index = Math.floor(Math.random() * trump_quotes.length);
@@ -124,6 +127,7 @@ function queueQuestion(){
 
 function showCorrect(){
   rounds_played++;
+  score++;
   $('#correct-indicator').text("You were correct!");
   $('#correct-answer-reveal').text("It was said by " + getCorString(correct_answer) + ".");
   $('.next-question-container').addClass('correct');
@@ -157,5 +161,7 @@ function getCorString(inp){
 }
 
 function showEnd(){
-
+  $('#scorenum').text(score + '/10');
+  $('.next-question-container').hide('fast');
+  $('.game-over-container').show('fast');
 }

@@ -15,16 +15,16 @@
           <h1 class="begin-header col col--centered col--1-of-1">Did Trump say it?</h1>
           <br>
           <div class="col col--centered col--1-of-1">
-            <a href="#" class="button begin-button button-large">Begin the game</a>
+            <div id="start-button" class="button begin-button button-large">Begin the game</div>
           </div>
         </section>
         <section class="question-container">
           <h3 id="question-counter" class="col col--centered col--1-of-1">Question 1 of 10</h3>
           <h2 id="quote" class="col col--centered col--1-of-1">&quot;This is a test quotation that Donald Trump obviously did not say.&quot;</h2>
           <br />
-          <a href="#" class="button choice-button" id="choice-trump">Trump said it</a>
-          <a href="#" class="button buttondark choice-button" id="choice-other">Somebody said it</a>
-          <a href="#" class="button buttonred choice-button" id="choice-none">Nobody said it</a>
+          <div class="button choice-button" id="choice-trump">Trump said it</div>
+          <div class="button buttondark choice-button" id="choice-other">Somebody said it</div>
+          <div class="button buttonred choice-button" id="choice-none">Nobody said it</div>
         </section>
         <section class="next-question-container">
         <h1 id="correct-indicator">You were correct!</h1>
@@ -32,7 +32,15 @@
         <br />
         <img id="between-img" src="assets/img/trump-right-1.jpg" alt="Trump-image">
         <br />
-        <a href="#" id="next-question" class="button next-button">Next question</a>
+        <div id="next-question" class="button next-button">Next question</div>
+        </section>
+        <section class="game-over-container">
+          <h1 id="game-over-heading">Game over!</h1>
+          <h2 id="final-score">Your final score was:</h2>
+          <br />
+          <h1 class="mega" id="scorenum">500</h1>
+
+          <div id="play-again" class="button begin-button button-large">Play again</div>
         </section>
         <br>
       </main>
