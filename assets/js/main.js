@@ -48,7 +48,6 @@ var none_quotes = [
 ];
 var rounds_played = 0;
 //GAME STATES: 0 = begin screen, 1 = question screen, 2 = in between questions, 3 = score+replay
-var game_state = 0;
 var score = 0;
 var quote_index = 0;
 var current_quote = '';
@@ -60,23 +59,19 @@ $(document).ready(function(){
 
     $('.begin-button').click(function(){
       $('.begin-container').hide('fast');
-      game_state = 1;
       rounds_played = 1;
       queueQuestion();
       $('.question-container').show('slow');
     });
 
     $('#choice-trump').click(function(){
-      game_state = 2;
       if('trump' === correct_answer){
         showCorrect();
       }else{
         showIncorrect();
       }
-      console.log('trump' === correct_answer);
     });
     $('#choice-other').click(function(){
-      game_state = 2;
       if('other' === correct_answer){
         showCorrect();
       }else{
@@ -85,11 +80,21 @@ $(document).ready(function(){
       console.log('other' === correct_answer);
     });
     $('#choice-none').click(function(){
-      game_state = 2;
       if('none' === correct_answer){
         showCorrect();
       }else{
         showIncorrect();
+      }
+    });
+
+    $('#next-question').click(function(){
+      if(rounds_played > 10){
+        console.log("END OF GAME");
+        showEnd();
+      }else{
+        queueQuestion();
+        $('.next-question-container').hide('fast');
+        $('.question-container').show('fast');
       }
     });
 
@@ -125,9 +130,9 @@ function showCorrect(){
   $('.next-question-container').removeClass('incorrect');
   img_str = "assets/img/trump-right-" + (Math.floor(Math.random() * 3) + 1) + ".jpg"
   $('#between-img').attr("src", img_str);
-
+  if(rounds_played > 10) $('#next-question').text("Show my score");
   $('.question-container').hide('fast');
-  $('.next-question-container').show('slow');
+  $('.next-question-container').show('fast');
 }
 
 function showIncorrect(){
@@ -138,9 +143,9 @@ function showIncorrect(){
   $('.next-question-container').addClass('incorrect');
   img_str = "assets/img/trump-wrong-" + (Math.floor(Math.random() * 3) + 1) + ".jpg"
   $('#between-img').attr("src", img_str);
-  
+  if(rounds_played > 10) $('#next-question').text("Show my score");
   $('.question-container').hide('fast');
-  $('.next-question-container').show('slow');
+  $('.next-question-container').show('fast');
 }
 
 
@@ -149,4 +154,8 @@ function getCorString(inp){
   if(inp === "other") return "somebody else";
   if(inp === "none") return "nobody";
   return "nobody";
+}
+
+function showEnd(){
+
 }
