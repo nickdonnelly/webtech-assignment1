@@ -41,7 +41,8 @@ html {
   font-size: 1.15em;
   padding-top: 0.35em;
   background: url("../img/trump-welcome.jpg") no-repeat center center fixed;
-  background-size: cover; }
+  background-size: cover;
+  filter: alpha(opacity=50); }
 
 .wrapper {
   opacity: 0;
@@ -149,6 +150,13 @@ h2 {
     height: 6em;
     line-height: 6em; } }
 
+.begin-container {
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+
 .begin-header {
   color: white;
   text-shadow: 2px 2px 4px #333333; }
@@ -158,7 +166,13 @@ h2 {
   margin: 2% 5%; }
 
 .question-container {
+  display: none;
   background: #5c51e7;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
   -webkit-border-radius: 8px;
   -o-border-radius: 8px;
   -moz-border-radius: 8px;
@@ -172,7 +186,16 @@ h2 {
   width: 90%;
   margin: 2% 5%;
   padding: 0.7em 0.3em;
-  border: 1px solid ligten(#5c51e7, 70%); }
+  border: 1px solid ligten(#5c51e7, 70%);
+  text-overflow: clip; }
+
+#question-counter {
+  color: #333333;
+  font-weight: 700;
+  text-align: center;
+  font-size: 1.4em;
+  opacity: 0.7;
+  text-shadow: 2px 2px 4px #333333; }
 
 .choice-button {
   display: -webkit-flex;
@@ -187,5 +210,51 @@ h2 {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin-top: 0.5em;
   margin-left: 0;
   margin-right: 0; }
+
+.next-button {
+  width: 94%;
+  margin: 2% 3%; }
+
+.next-question-container {
+  display: none;
+  background: #59ABE3;
+  color: white;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  -ms-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  -o-box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.75);
+  -webkit-border-radius: 8px;
+  -o-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  width: 90%;
+  margin: 2% 5%; }
+  .next-question-container h1 {
+    text-shadow: 2px 2px 4px #333333; }
+
+.correct {
+  background: #2ECC71 !important;
+  color: #d1f5e0 !important; }
+
+.incorrect {
+  background: #CF000F !important;
+  color: #ff9ca3 !important; }
+
+#correct-answer-reveal {
+  color: #b3b3b3;
+  font-size: 2em; }
+
+#between-img {
+  width: 90%;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #446CB3;
+  margin: 0 5%; }
