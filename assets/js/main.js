@@ -123,6 +123,7 @@ function queueQuestion(){
   }
   $('#question-counter').text("Question " + rounds_played +" of 10");
   $('#quote').text('"' + current_quote + '"');
+  //
 }
 
 function showCorrect(){
